@@ -1,5 +1,5 @@
 package Array;
-
+// Sample program
 import java.util.Scanner;
 
 public class Sample {
