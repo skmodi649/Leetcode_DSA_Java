@@ -32,3 +32,12 @@ public class Array_from_permutation {
         }
 }
 }
+
+
+/** BRUTE FORCE APPROACH
+ * int n = nums.length;
+ * int[] temp = new temp[n];
+ * for(int i=0;i<n;i++){
+ *     temp[i] = nums[nums[i]];
+ * }
+ */
