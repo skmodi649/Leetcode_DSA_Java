@@ -1,3 +1,8 @@
+/*
+The solution presented is a optimal approach that uses O(1) space and O(n) time
+There is another approach, brute force, in which we make use another array or arraylist
+ */
+
 package Array;
 import java.util.Scanner;
 
