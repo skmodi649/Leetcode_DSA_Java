@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Max_Value_Equation {
     public static int findMaxValueOfEquation(int[][] points, int k) {
-        int max = 0;
+        int max = -2147483648;
         int n = points.length;
         for(int i = 0 ; i < n-1 ; i++){
             int val = 0;
