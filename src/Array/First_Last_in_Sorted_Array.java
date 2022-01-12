@@ -28,7 +28,7 @@ public class First_Last_in_Sorted_Array {
         } else {
             arr[0] = mid - 1;
             if(nums[mid - 1] == target)
-                arr[1] = index;
+                arr[1] = mid;
             else
                 arr[1] = -1;
         }
