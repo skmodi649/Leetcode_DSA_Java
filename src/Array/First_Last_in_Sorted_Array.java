@@ -3,35 +3,43 @@ package Array;
 import java.util.Scanner;
 
 public class First_Last_in_Sorted_Array {
-    public static int[] searchRange(int[] nums, int target) {
+    public static int[] searchRange(int[] numbers, int target) {
         int[] arr = new int[2];
-        int n = nums.length;
+        int n = numbers.length;
 
-        int first = 0 , last = n - 1;
-        int mid = first + ((last  - first) / 2);
-        while(first <= last){
+        int low = 0, high = n - 1;
+        // get the start index of target number
+        int startIndex = -1;
+        while (low <= high) {
+            int mid = (high - low) / 2 + low;
+            if (numbers[mid] > target) {
+                high = mid - 1;
+            } else if (numbers[mid] == target) {
+                startIndex = mid;
+                high = mid - 1;
+            } else
+                low = mid + 1;
+        }
 
-            if(nums[mid] < target){
-                last = mid - 1;
-            }
-            else if(nums[mid] > target){
-                first = mid + 1;
-            }
-            else{
-                break;
-            }
-            mid = first + ((last - first) / 2);
+        // get the end index of target number
+        int endIndex = -1;
+        low = 0;
+        high = n - 1;
+        while (low <= high) {
+            int mid = (high - low) / 2 + low;
+            if (numbers[mid] > target) {
+                high = mid - 1;
+            } else if (numbers[mid] == target) {
+                endIndex = mid;
+                low = mid + 1;
+            } else
+                low = mid + 1;
         }
-        if (mid == -1) {
-            arr[0] = -1;
-            arr[1] = -1;
-        } else {
-            arr[0] = mid - 1;
-            if(nums[mid - 1] == target)
-                arr[1] = mid;
-            else
-                arr[1] = -1;
-        }
+
+        arr[0] = startIndex;
+        arr[1] = endIndex;
+
+
         return arr;
     }
     public static void main(String[] args){
