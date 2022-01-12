@@ -1,3 +1,6 @@
+// Difficulty : Minimum
+// Eligible for Revision
+
 package Array;
 
 import java.util.Scanner;
