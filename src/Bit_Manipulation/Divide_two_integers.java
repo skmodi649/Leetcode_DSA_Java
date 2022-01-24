@@ -8,9 +8,13 @@ Return the quotient after dividing dividend by divisor.
 Note: Assume we are dealing with an environment that could only store integers within the 32-bit signed integer range:
 [−231, 231 − 1]. For this problem, if the quotient is strictly greater than 231 - 1, then return 231 - 1, and if the quotient
 is strictly less than -231, then return -231.
+
+Difficulty : Medium
  */
 
 package Bit_Manipulation;
+
+import java.util.Scanner;
 
 public class Divide_two_integers {
     public static int divide(int a, int b) {
@@ -52,7 +56,12 @@ public class Divide_two_integers {
             return Integer.MIN_VALUE;}
         return (int)quotient;
     }
-}
-public static void main(String[] args){
-
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the dividend and the divisor respectively : ");
+        int dividend = sc.nextInt();
+        int divisor = sc.nextInt();
+        int quotient = divide(dividend , divisor);
+        System.out.println("The quotient : " + quotient);
+    }
 }
