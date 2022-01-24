@@ -65,3 +65,57 @@ public class Divide_two_integers {
         System.out.println("The quotient : " + quotient);
     }
 }
+
+
+
+
+
+
+/*
+Own devised Brute Force approach(TLE) :
+
+public int divide(int divid, int divis) {
+        int max = Integer.MAX_VALUE;
+        int min = Integer.MIN_VALUE;
+        long dividend = divid;
+        long divisor = divis;
+        long count = 0;
+        if(dividend > 0 && divisor > 0){
+            while(dividend >= divisor){
+                dividend = dividend - divisor;
+                count++;
+            }
+        }
+        else if(dividend < 0 && divisor < 0){
+            dividend = -dividend;
+            divisor = -divisor;
+            while(dividend >= divisor){
+                dividend = dividend - divisor;
+                count++;
+            }
+        }
+        else if(dividend > 0 && divisor < 0){
+            divisor = -divisor;
+            while(dividend >= divisor){
+                dividend = dividend - divisor;
+                count++;
+            }
+            count = -count;
+        }
+        else{
+            dividend = -dividend;
+            while(dividend >= divisor){
+                dividend = dividend - divisor;
+                count++;
+            }
+            count = -count;
+        }
+        if(count > max)
+            return max;
+        else if(count < min)
+            return min;
+        else
+        return (int)count;
+    }
+ */
+
