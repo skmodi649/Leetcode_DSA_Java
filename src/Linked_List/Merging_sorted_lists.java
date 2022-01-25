@@ -13,6 +13,12 @@ class Listnode {
 
 public class Merging_sorted_lists {
     public Listnode mergeTwoLists(Listnode list1, Listnode list2) {
+        if(list1 == null && list2 == null)
+            return list1;
+        if(list1 == null && list2 != null)
+            return list2;
+        if(list2 == null && list1 != null)
+            return list1;
         ArrayList<Integer> list = new ArrayList<>();
         Listnode temp1 = list1;
         Listnode temp2 = list2;
@@ -27,7 +33,7 @@ public class Merging_sorted_lists {
             temp2 = temp2.next;
             n2++;
         }
-        if((n1 + n2) == 0){
+      /*  if((n1 + n2) == 0){
             return list1;
         }
         if(n1 == 0 && n2 != 0){
@@ -35,7 +41,7 @@ public class Merging_sorted_lists {
         }
         if(n2 == 0 && n1 != 0){
             return list1;
-        }
+        } */
         Collections.sort(list);
         int i = 0;
         Listnode temp = list1;
